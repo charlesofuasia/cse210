@@ -11,76 +11,48 @@ class Program
       //convert string input to an integer
       int scoreNumber = int.Parse(score);
 
+      string letter = "";
+      string highlight = "";
       if (scoreNumber >= 90)
       {
-        if (scoreNumber % 10 >= 3 || scoreNumber >= 100)
-        {
-            Console.WriteLine("Grade is A");
-        }
-        else
-        {
-            Console.WriteLine("Grade is A-");
-        }
+        letter = "A";
       }
       else if (scoreNumber >= 80)
       {
-        if (scoreNumber % 10 >= 7)
-        {
-            Console.WriteLine("Grade is B+");
-        }
-        else if (scoreNumber % 10 < 3)
-        {
-            Console.WriteLine("Grade is B-");
-        }
-        else
-        {
-            Console.WriteLine("Grade is B");
-        }
+        letter = "B";
       }
       else if (scoreNumber >= 70)
       {
-        if (scoreNumber % 10 >= 10)
-        {
-            Console.WriteLine("Grade is C+");
-        }
-        else if (scoreNumber % 10 < 3)
-        {
-            Console.WriteLine("Grade is C-");
-        }
-        else
-        {
-             Console.WriteLine("Grade is C");
-        }
-       
+        letter = "C";
       }
       else if (scoreNumber >= 60)
       {
+        letter = "D";
+      }
+      else
+      {
+        letter = "F";
+      }
+      // Stretch assignment appending + and - to grades as required.
+      if (scoreNumber < 90 && scoreNumber >= 60)
+      {
         if (scoreNumber % 10 >= 7)
         {
-            Console.WriteLine("Grade is D+");
+          highlight = "+";
         }
         else if (scoreNumber % 10 < 3)
         {
-            Console.WriteLine("Grade is D-");
+          highlight = "-";
         }
-        else
+      }
+      else if (scoreNumber >=90)
+      {
+        if (scoreNumber % 10 < 3 && scoreNumber <= 100)
         {
-            Console.WriteLine("Grade is D");
+          highlight = "-";
         }
       }
-      else
-      {
-        Console.WriteLine("Grade is F");
-      }
-      if (scoreNumber >= 70)
-      {
-        Console.WriteLine("You passed!");
-      }
-      else
-      {
-        Console.WriteLine("Sorry you did not make it.");
-      }
-
+      Console.WriteLine($"Your grade is {letter}{highlight}");
 
     }
 }
