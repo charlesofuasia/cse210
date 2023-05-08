@@ -12,6 +12,18 @@ public class PromptGenerator
 
     public void GenerateRandomPrompt()
     {
+        List<string> prompters = new List<string>();
+        prompters.Add(_dayLessonPrompt);
+        prompters.Add(_dayTasksPrompt);
+        prompters.Add(_improvementPrompt);
+        prompters.Add(_remarkableEventPrompt);
+        prompters.Add(_remarkablePersonprompt);
+        prompters.Add(_scripturePrompt);
+
+        foreach(string promter in prompters)
+        {
+            Console.WriteLine(promter);
+        }
 
     }
 }
