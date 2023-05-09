@@ -13,6 +13,7 @@ class Program
         _prompt._remarkablePersonprompt = "Was there a remarkable person you met today?";
         _prompt._scripturePrompt = "What did you learn from the scriptures study today?";
 
-        _prompt.GenerateRandomPrompt();
+
+
     }
 }
