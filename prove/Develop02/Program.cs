@@ -50,6 +50,10 @@ class Program
             journal._entries.Add(entry);
 
             journal.DisplayJournal();
+
+            journal._filename = Console.ReadLine();
+
+            journal.SaveToFile(journal._filename, journal._entries);
             
 
 
