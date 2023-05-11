@@ -1,5 +1,7 @@
 using System;
 
+using System.IO;
+
 public class Journal
 {
     public string _filename;
@@ -7,9 +9,12 @@ public class Journal
     public List<Entry> _entries = new List<Entry>();
 
 
-    public void SaveToFile()
+    public void SaveToFile(string filename, List<Entry> entry )
     {
-        //code here
+        using(StreamWriter output = new StreamWriter(_filename))
+        {
+            output.WriteLine(entry);
+        }
         
 
     }
@@ -19,6 +24,14 @@ public class Journal
         //code here
 
 
+    }
+
+    public void DisplayJournal()
+    {
+        foreach(Entry entry in _entries)
+        {
+            entry.CreateNewEntry();
+        }
     }
     
     

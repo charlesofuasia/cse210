@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Program
 {
@@ -16,8 +17,9 @@ class Program
          // Instance for Journal created here
         Journal journal = new Journal();
 
+
         //date variable created to from Datetime class to generate dates of entries.
-         DateTime date = DateTime.Today;
+         DateTime date = DateTime.Now;
          
 
 
@@ -31,18 +33,40 @@ class Program
         string option = Console.ReadLine();
         Console.WriteLine();
 
+        while (option != "3")
+        {
+            
         if( option == "1")
         { 
+            //Create an instance for Entry class
+            Entry entry = new Entry();
+
+            //assign current date to _date attribute
+            entry._date = date.ToShortDateString();//short of current date assigned to entry._date
+            entry._entryPrompt = prompt.GenerateRandomPrompt(); // random prompt is generated here
+            Console.WriteLine(entry._entryPrompt);//display random prompt on console
+            entry._entry = Console.ReadLine(); //user entry assigned to entry._entry
+
+            journal._entries.Add(entry);
+
+            journal.DisplayJournal();
+            
+
+
+            ListOptions();
+            option = Console.ReadLine();
+            Console.WriteLine();
+
+            
+
+
         
         }
         else if(option == "2")
         {
 
         }
-        else if(option == "3")
-        {
-            Console.WriteLine("Thank you for using the journal app");
-        }
+       
         else
         {
             Console.WriteLine("Please choose from options 1-3 provided.");
@@ -50,6 +74,11 @@ class Program
             option = Console.ReadLine();
             Console.WriteLine();
         }
+
+        }
+
+        Console.WriteLine("You have exited the journal app.");
+
        
 
 
@@ -66,4 +95,6 @@ class Program
 
 
     }
+
+    
 }
