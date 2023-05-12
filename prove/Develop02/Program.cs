@@ -49,17 +49,17 @@ class Program
 
             journal._entries.Add(entry);
 
-            journal.DisplayJournal();
-
             Console.Write("Choose a filename for your journal: ");
 
             journal._filename = Console.ReadLine();
 
             journal.SaveToFile(journal._filename, journal._entries);
+
+            journal.DisplayJournal();
             
 
 
-            ListOptions();
+            option = ListOptions();
             
         
         }
@@ -70,12 +70,14 @@ class Program
 
             journal.LoadFromFile(journal._filename);
 
+            option = ListOptions();
+
         }
        
         else
         {
             Console.WriteLine("Please choose from options 1-3 provided.");
-            ListOptions();
+            option = ListOptions();
            
         }
 

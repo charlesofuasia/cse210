@@ -12,9 +12,9 @@ public class Entry
     public void CreateNewEntry()
     {
         Console.WriteLine();
-        Console.WriteLine($"{_date}:    {_entryPrompt}");
+        Console.WriteLine($"{_date}: {_entryPrompt}");
         Console.WriteLine();
-        Console.WriteLine(_entry);
+        Console.WriteLine($"\t {_entry}");
         Console.WriteLine();
 
     }

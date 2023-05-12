@@ -2,6 +2,7 @@ using System;
 
 using System.IO;
 
+
 public class Journal
 {
     public string _filename;
@@ -9,22 +10,24 @@ public class Journal
     public List<Entry> _entries = new List<Entry>();
 
 
+
     public void SaveToFile(string filename, List<Entry> entry )
     {
-        using(StreamWriter output = new StreamWriter(_filename))
-        {
-            output.WriteLine(entry);
-        }
+        using(StreamWriter output = new StreamWriter(_filename) )
+            {
+                foreach(Entry i in _entries)
+                {
+                    output.Write($"{i._date}: ");
+                    output.WriteLine(i._entryPrompt);
+                    output.WriteLine(i._entry);
+                }
+            }
+
+        
         
 
     }
 
-    public void LoadFromFile()
-    {
-        
-
-
-    }
 
     public void DisplayJournal()
     {
