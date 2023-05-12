@@ -21,7 +21,7 @@ public class Journal
 
     public void LoadFromFile()
     {
-        //code here
+        
 
 
     }
@@ -32,6 +32,17 @@ public class Journal
         {
             entry.CreateNewEntry();
         }
+    }
+
+    public void LoadFromFile(string filename)
+    {
+        string [] lines = System.IO.File.ReadAllLines(filename);
+
+        foreach (string line in lines)
+        {
+            Console.WriteLine(line);
+        }
+
     }
     
     
