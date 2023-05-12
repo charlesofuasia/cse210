@@ -29,9 +29,9 @@ class Program
         Console.WriteLine("Welcome to your journal app. Choose an option from the list below.");
         Console.WriteLine();
 
-        ListOptions();
-        string option = Console.ReadLine();
-        Console.WriteLine();
+        string option = ListOptions();
+        
+    
 
         while (option != "3")
         {
@@ -51,6 +51,8 @@ class Program
 
             journal.DisplayJournal();
 
+            Console.Write("Choose a filename for your journal: ");
+
             journal._filename = Console.ReadLine();
 
             journal.SaveToFile(journal._filename, journal._entries);
@@ -58,12 +60,7 @@ class Program
 
 
             ListOptions();
-            option = Console.ReadLine();
-            Console.WriteLine();
-
             
-
-
         
         }
         else if(option == "2")
@@ -75,8 +72,7 @@ class Program
         {
             Console.WriteLine("Please choose from options 1-3 provided.");
             ListOptions();
-            option = Console.ReadLine();
-            Console.WriteLine();
+           
         }
 
         }
@@ -87,12 +83,16 @@ class Program
 
 
 
-        static void ListOptions()
+        static string ListOptions()
         {
             Console.WriteLine("1. Make a new entry in the journal");
             Console.WriteLine("2. View past journal entries.");
             Console.WriteLine("3. Exit the journal app.");
             Console.Write("What would you like to do? Choose 1 - 3.:    ");
+            string option = Console.ReadLine();
+            Console.WriteLine();
+
+            return option;
         
         }
         
