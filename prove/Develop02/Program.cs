@@ -17,14 +17,9 @@ class Program
          // Instance for Journal created here
         Journal journal = new Journal();
 
+                  
 
-        //date variable created to from Datetime class to generate dates of entries.
-         DateTime date = DateTime.Now;
-         
-
-
-
-        // Program flow starts here
+        // Interactive part of Program starts here
 
         Console.WriteLine("Welcome to your journal app. Choose an option from the list below.");
         Console.WriteLine();
@@ -42,7 +37,9 @@ class Program
             Entry entry = new Entry();
 
             //assign current date to _date attribute
+            DateTime date = DateTime.Now;
             entry._date = date.ToShortDateString();//short of current date assigned to entry._date
+            entry._entryTime = date.ToShortTimeString();
             entry._entryPrompt = prompt.GenerateRandomPrompt(); // random prompt is generated here
             Console.WriteLine(entry._entryPrompt);//display random prompt on console
             entry._entry = Console.ReadLine(); //user entry assigned to entry._entry
