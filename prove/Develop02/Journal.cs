@@ -22,7 +22,7 @@ public class Journal
             {
                 foreach(Entry i in _entries)
                 {
-                    output.WriteLine($"{i._date} @ {i._entryTime}: {i._entryPrompt}");
+                    output.WriteLine($"{i._date} @ {i._entryTime}:- {i._entryPrompt}");
                     output.WriteLine();
                     output.WriteLine($"\t   {i._entry}");
                     output.WriteLine();

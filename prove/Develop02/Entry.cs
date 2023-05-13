@@ -14,7 +14,7 @@ public class Entry
     public void CreateNewEntry()
     {
         Console.WriteLine();
-        Console.WriteLine($"{_date} @ {_entryTime} {_entryPrompt}");
+        Console.WriteLine($"{_date} @ {_entryTime}:-  {_entryPrompt}");
         Console.WriteLine();
         Console.WriteLine($"\t  {_entry}");
         Console.WriteLine();

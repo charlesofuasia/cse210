@@ -55,12 +55,13 @@ class Program
             if (save == "1")
             {
                 //Uses SavetoFile method of journal class to save entry filename provided by user.
-                 Console.Write("Choose a filename for your journal: ");
+                 Console.Write("Choose a filename for your journal in 'txt' format please.: ");
                  journal._filename = Console.ReadLine();
                  journal.SaveToFile(journal._filename, journal._entries);
                  Console.WriteLine();
 
                  Console.WriteLine($"Your entry has been saved to {journal._filename}.");
+                 Console.WriteLine();
 
             }
 
