@@ -33,7 +33,7 @@ class Program
         
     
 
-        while (option != "3")
+        while (option != "4")
         {
             
         if( option == "1")
@@ -47,17 +47,36 @@ class Program
             Console.WriteLine(entry._entryPrompt);//display random prompt on console
             entry._entry = Console.ReadLine(); //user entry assigned to entry._entry
 
-            journal._entries.Add(entry);
+            journal._entries.Add(entry); //Adds the entry to the _entry list
 
-            Console.Write("Choose a filename for your journal: ");
+            //User is then prompted if they wish to save their entry into a file
 
-            journal._filename = Console.ReadLine();
+            Console.Write("Would you like to save your entry? yes = 1, no = 0: ");
+            string save = Console.ReadLine();
+            Console.WriteLine();
 
-            journal.SaveToFile(journal._filename, journal._entries);
+            if (save == "1")
+            {
+                //Uses SavetoFile method of journal class to save entry filename provided by user.
+                 Console.Write("Choose a filename for your journal: ");
+                 journal._filename = Console.ReadLine();
+                 journal.SaveToFile(journal._filename, journal._entries);
+                 Console.WriteLine();
 
-            journal.DisplayJournal();
-            
+                 Console.WriteLine($"Your entry has been saved to {journal._filename}.");
 
+            }
+
+            else if (save == "0")
+            {
+                Console.WriteLine("Your entry was not saved.");
+                
+            }
+            else
+            {
+                Console.WriteLine("You can either choose '1' or '0'");
+            }
+ 
 
             option = ListOptions();
             
@@ -72,6 +91,22 @@ class Program
 
             option = ListOptions();
 
+        }
+        else if (option == "3")
+        {
+            if ( journal._entries.Count > 0 )
+            {
+                journal.DisplayJournal();
+                option = ListOptions();
+
+            }
+            else
+            {
+                Console.WriteLine("There are no entries in the journal.");
+                option = ListOptions();
+            }
+            
+            
         }
        
         else
@@ -91,10 +126,19 @@ class Program
 
         static string ListOptions()
         {
+            /*
+                Function that shows a list of options to a journal user and prompts 
+                the user to choose an option from the list and returns the option 
+                choosen by the user.
+                Parameters: none
+                Returns: option.
+            */
+
             Console.WriteLine("1. Make a new entry in the journal");
-            Console.WriteLine("2. View past journal entries.");
-            Console.WriteLine("3. Exit the journal app.");
-            Console.Write("What would you like to do? Choose 1 - 3.:    ");
+            Console.WriteLine("2. View past journal entries from a file.");
+            Console.WriteLine("3. Display current journal entries");
+            Console.WriteLine("4. Exit the journal app.");
+            Console.Write("What would you like to do? Choose 1 - 4: ");
             string option = Console.ReadLine();
             Console.WriteLine();
 
