@@ -1,15 +1,11 @@
 using System;
-
 using System.IO;
-
 
 public class Journal
 {
     public string _filename;
 
     public List<Entry> _entries = new List<Entry>();
-
-
 
     public void SaveToFile(string filename, List<Entry> entry )
     {
@@ -29,12 +25,7 @@ public class Journal
                     output.WriteLine();
                 }
             }
-
-        
-        
-
     }
-
 
     public void DisplayJournal()
     {/*
@@ -45,9 +36,7 @@ public class Journal
     */
         foreach(Entry i in _entries)
         {
-           i.CreateNewEntry();
-            
-             
+           i.CreateNewEntry();           
         }
     }
 
@@ -61,8 +50,5 @@ public class Journal
         {
             Console.WriteLine(line);
         }
-
-    }
-    
-    
+    }  
 }
