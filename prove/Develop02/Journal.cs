@@ -18,11 +18,7 @@ public class Journal
             {
                 foreach(Entry i in _entries)
                 {
-                    output.WriteLine($"{i._date} @ {i._entryTime}:- {i._entryPrompt}");
-                    output.WriteLine();
-                    output.WriteLine($"\t   {i._entry}");
-                    output.WriteLine();
-                    output.WriteLine();
+                    output.WriteLine($"{i._date}#{i._entryTime}#{i._entryPrompt}#{i._entry}"); 
                 }
             }
     }
@@ -43,12 +39,22 @@ public class Journal
     public void LoadFromFile(string filename)
     {
         // A method that loads and displays entries that have been saved to a file.
+        _entries.Clear();
 
         string [] lines = System.IO.File.ReadAllLines(filename);
 
         foreach (string line in lines)
         {
-            Console.WriteLine(line);
+            string [] cleanLine = line.Split("#");
+            string date = cleanLine[0];
+            string time = cleanLine[1];
+            string prompt = cleanLine[2];
+            string entry = cleanLine[3];
+
+            Console.WriteLine($"{date} @ {time}:- {prompt}");
+            Console.WriteLine();
+            Console.WriteLine($"\t {entry}");
+            Console.WriteLine();
         }
     }  
 }
