@@ -40,8 +40,9 @@ public class Journal
     {
         // A method that loads and displays entries that have been saved to a file.
         _entries.Clear();
-
-        string [] lines = System.IO.File.ReadAllLines(filename);
+        try
+        {
+            string [] lines = System.IO.File.ReadAllLines(filename);
 
         foreach (string line in lines)
         {
@@ -54,6 +55,13 @@ public class Journal
             Console.WriteLine($"{date} @ {time}:- {prompt}");
             Console.WriteLine();
             Console.WriteLine($"\t {entry}");
+            Console.WriteLine();
+        }
+        
+        }
+        catch
+        {
+            Console.WriteLine("Sorry, cannot not find the file");
             Console.WriteLine();
         }
     }  

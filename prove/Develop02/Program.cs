@@ -82,13 +82,13 @@ class Program
         }
         else if(option == "2")
         {
+        
             Console.Write("Choose a filename of the journal you want to view: ");
             journal._filename = Console.ReadLine();
 
             journal.LoadFromFile(journal._filename);
 
             option = ListOptions();
-
         }
         else if (option == "3")
         {
