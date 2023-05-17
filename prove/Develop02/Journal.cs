@@ -18,7 +18,7 @@ public class Journal
             {
                 foreach(Entry i in _entries)
                 {
-                    output.WriteLine($"{i._date}#{i._entryTime}#{i._entryPrompt}#{i._entry}"); 
+                    output.WriteLine($"{i._date}~{i._entryTime}~{i._entryPrompt}~{i._entry}"); 
                 }
             }
     }
@@ -46,7 +46,7 @@ public class Journal
 
         foreach (string line in lines)
         {
-            string [] cleanLine = line.Split("#");
+            string [] cleanLine = line.Split("~");
             string date = cleanLine[0];
             string time = cleanLine[1];
             string prompt = cleanLine[2];
