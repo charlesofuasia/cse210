@@ -18,7 +18,7 @@ public class Journal
             {
                 foreach(Entry i in _entries)
                 {
-                    output.WriteLine($"{i._date}~{i._entryTime}~{i._entryPrompt}~{i._entry}"); 
+                    output.WriteLine($"{i._date}~{i._entryTime}~{i._entryPrompt}~{i._entry}");
                 }
             }
     }
@@ -39,13 +39,16 @@ public class Journal
     public void LoadFromFile(string filename)
     {
         // A method that loads and displays entries that have been saved to a file.
-        _entries.Clear();
+        _entries.Clear(); //clears the items in _entries
+
+        //use a try/catch to avoid a program blow up in case the filename does not exist 
+        //or the user wrongly types in the filemname.
         try
         {
             string [] lines = System.IO.File.ReadAllLines(filename);
 
         foreach (string line in lines)
-        {
+        {//lines are split at ~ and the indices assigned to variables.
             string [] cleanLine = line.Split("~");
             string date = cleanLine[0];
             string time = cleanLine[1];
@@ -59,7 +62,7 @@ public class Journal
         }
         
         }
-        catch
+        catch//a more understandle message is displayed in case of such errors.
         {
             Console.WriteLine("Sorry, cannot not find the file");
             Console.WriteLine();

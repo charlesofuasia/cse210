@@ -64,6 +64,7 @@ class Program
             else if (save == "0")
             {
                 Console.WriteLine("Your entry was not saved.");
+                Console.WriteLine();
                 
             }
             else
@@ -79,6 +80,7 @@ class Program
         
             Console.Write("Choose a filename of the journal you want to view: ");
             journal._filename = Console.ReadLine();
+            Console.WriteLine();
 
             journal.LoadFromFile(journal._filename);
 
