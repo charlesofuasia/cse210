@@ -15,9 +15,7 @@ class Program
         prompt._scripturePrompt = "What did you learn from the scriptures study today?";
 
          // Instance for Journal created here
-        Journal journal = new Journal();
-
-                  
+        Journal journal = new Journal();          
 
         // Interactive part of Program starts here
 
@@ -25,8 +23,6 @@ class Program
         Console.WriteLine();
 
         string option = ListOptions();
-        
-    
 
         while (option != "4")
         {
@@ -74,10 +70,8 @@ class Program
             {
                 Console.WriteLine("You can either choose '1' or '0'");
             }
- 
 
-            option = ListOptions();
-            
+            option = ListOptions();   
         
         }
         else if(option == "2")
@@ -102,8 +96,7 @@ class Program
             {
                 Console.WriteLine("There are no entries in the journal.");
                 option = ListOptions();
-            }
-            
+            }    
             
         }
        
@@ -117,9 +110,6 @@ class Program
         }
 
         Console.WriteLine("You have exited the journal app.");
-
-       
-
 
 
         static string ListOptions()
@@ -141,12 +131,8 @@ class Program
             Console.WriteLine();
 
             return option;
-        
         }
-        
-
 
     }
-
-    
+  
 }
