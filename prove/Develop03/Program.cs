@@ -6,10 +6,13 @@ class Program
     {
         Random rnd = new Random();
 
-        Reference myRef = new Reference("Enos", "1", "2");
-
         ScriptureSelector text = new ScriptureSelector("scripture.txt");
         string textVerse = text.GetText();
+        string book = text.GetBook();
+        string chapter = text.GetChapter();
+        string verse = text.GetVerse();
+
+        Reference myRef = new Reference(book, chapter, verse);
        
         Scripture scripture  = new Scripture(myRef, textVerse);
 
