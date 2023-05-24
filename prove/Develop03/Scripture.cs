@@ -7,14 +7,15 @@ public class Scripture
 
     //Scripture constructors
     //the constructor accepts 2 parameters, a reference and a string variable
-    //which store the verse to be memorized
+    //and stores the verse to be memorized
     public Scripture(Reference reference, string text){
         _words = new List<Word>(); //_words array is instantiated
         string[] words = text.Split(" ");//and verse split at spaces between words
         foreach (string word in words)
         {
-            Word x = new Word(word); // Word class instantiated as x and the split word assigned to it
-            _words.Add(x);          // and the x is added to the _words
+            Word x = new Word(word); // Instance of word with the encapsulated _visibleWord assessed 
+            _words.Add(x);          // through the constructor Word(word)
+                        //word in words assigned into x which is an instance of Word class and added to _words
         }  
         _reference = reference;
     }
