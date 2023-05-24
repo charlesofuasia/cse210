@@ -6,8 +6,12 @@ class Program
     {
         Random rnd = new Random();
 
-        Reference myRef = new Reference("Genesis", "1", "1");
-        Scripture scripture  = new Scripture(myRef, "In the beginning God created the heaven and the earth.");
+        Reference myRef = new Reference("Enos", "1", "2");
+
+        ScriptureSelector text = new ScriptureSelector("scripture.txt");
+        string textVerse = text.GetText();
+       
+        Scripture scripture  = new Scripture(myRef, textVerse);
 
         bool Display()
         {
