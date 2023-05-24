@@ -1,0 +1,47 @@
+using System;
+
+public class Scripture
+{
+    private List<Word> _words;//a list of Word types got from splitting the verse into individual words
+    private Reference _reference; //from the reference class
+
+    //Scripture constructors
+    //the constructor accepts 2 parameters, a reference and a string variable
+    //which store the verse to be memorized
+    public Scripture(Reference reference, string text){
+        _words = new List<Word>(); //_words array is instantiated
+        string[] words = text.Split(" ");//and verse split at spaces between words
+        foreach (string word in words)
+        {
+            Word x = new Word(word); // Word class instantiated as x and the split word assigned to it
+            _words.Add(x);          // and the x is added to the _words
+        }  
+        _reference = reference;
+    }
+
+    //A getter to be used to access the encapsulated _words
+    public List<Word> GetWords()
+    {
+        return _words;
+    }
+
+    public void DisplayScripture()
+    {
+        foreach(Word item in _words)
+        {
+            item.DisplayWord();
+            Console.Write(" ");
+        }
+        _reference.GetReference();
+    }
+
+    public bool AllHidden()
+    {
+        foreach(Word item in _words)
+        {
+            if(!item.GetIsHidden())
+                return false;
+        }
+        return true;
+    }
+}
