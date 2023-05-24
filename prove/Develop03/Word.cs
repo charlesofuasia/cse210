@@ -28,7 +28,9 @@ public class Word
             }
         }
         else
-            Console.Write(_visibleWord);
+            {
+                Console.Write(_visibleWord);
+            }
     }
 
     public bool GetIsHidden()
