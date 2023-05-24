@@ -9,7 +9,7 @@ public class Reference
     private string _endVerse;
 
     //The constructors
-    public Reference(string book, string chapter, string verse)
+    public Reference(string book, string chapter, string verse)// for only 1 scripture verse
     {
         _book = book;
         _chapter = chapter;
