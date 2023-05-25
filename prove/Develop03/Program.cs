@@ -12,9 +12,9 @@ class Program
         string chapter = text.GetChapter();
         string verse = text.GetVerse();
 
-        Reference myRef = new Reference(book, chapter, verse);
+        Reference theReference = new Reference(book, chapter, verse);
        
-        Scripture scripture  = new Scripture(myRef, textVerse);
+        Scripture scripture  = new Scripture(theReference, textVerse);
 
         bool Display()
         {
