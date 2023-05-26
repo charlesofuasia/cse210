@@ -21,13 +21,22 @@ class Program
             Console.Clear();
             scripture.DisplayScripture();
             if(scripture.AllHidden())
+            {
                 return false;
+            }
+                
             Console.WriteLine("\nType 'Quit' to end program or press enter to continue.");
             string input = Console.ReadLine();
             if(input == "Quit")
+            {
                 return false;
+            }
+                
             else
+            {
                 return true;
+            }
+                
         }
 
         while(Display())

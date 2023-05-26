@@ -28,12 +28,13 @@ public class Scripture
 
     public void DisplayScripture()
     {
+        _reference.GetReference();
         foreach(Word item in _words)
         {
             item.DisplayWord();
             Console.Write(" ");
         }
-        _reference.GetReference();
+       
     }
 
     public bool AllHidden()
