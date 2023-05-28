@@ -42,7 +42,7 @@ class Program
         while(Display())
         {
             int counter = 0;
-            while(counter < 3)
+            while(counter < 4)
             {
                 int index = rnd.Next(scripture.GetWords().Count);
                 if(!scripture.GetWords()[index].GetIsHidden())
