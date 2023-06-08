@@ -30,7 +30,7 @@ public class BreathingActivity : Activity
         ActivateActivityTimer(5);
         Console.WriteLine();
         Console.WriteLine("Start!");
-        ActivatePause();
+        ActivatePause(5);
        
         
         while(present < stop)
@@ -51,12 +51,10 @@ public class BreathingActivity : Activity
         Console.WriteLine();
         Console.WriteLine("Complete");
         Console.WriteLine();
-        ActivatePause();
+        ActivatePause(5);
         Console.WriteLine();
         DisplayEndMessage();
        
     }
-
-
 
 }
