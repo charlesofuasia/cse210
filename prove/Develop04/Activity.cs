@@ -1,7 +1,4 @@
 using System;
-using System.IO;
-using System.Threading;
-using System.Timers;
 
 public class Activity
 {
@@ -20,31 +17,51 @@ public class Activity
         _activityDuration = time;
         _activityInstruction = instruction;
     }
+   public Activity()
+   {
 
-    public void DisplayStartMessage(string type)
+   }
+    public void DisplayStartMessage()
     {
-        Console.Write($"Welcome to {_activityName} activity: {_activityDescription} ");
+        Console.Clear();
+        Console.WriteLine($"Welcome to {_activityName} activity: {_activityDescription} ");
        
     }
-    public void ActivatePause()
+    public void ActivatePause(int period)
     {
+       Console.CursorVisible = false;
        List<string> pauseIcons = new List<string>();
-       pauseIcons.Add("$");
-       pauseIcons.Add("£");
-       pauseIcons.Add("$");
-       pauseIcons.Add("£");
-       pauseIcons.Add("$");
-       pauseIcons.Add("£");
-       pauseIcons.Add("$");
-       pauseIcons.Add("£");
+       pauseIcons.Add("|");
+       pauseIcons.Add("/");
+       pauseIcons.Add("-");
+       pauseIcons.Add("\\");
+       pauseIcons.Add("|");
+       pauseIcons.Add("/");
+       pauseIcons.Add("-");
+       pauseIcons.Add("\\");
 
-       for(int i = 0; i < pauseIcons.Count(); i++)
+       DateTime startTime = DateTime.Now;
+       DateTime stoptime = startTime.AddSeconds(period);
+
+       int i = 0;
+
+       while(DateTime.Now < stoptime)
        {
-        Console.Write(pauseIcons[i]);
-        Thread.Sleep(1000);
-        Console.Write("\b \b");
+       {
+            Console.Write(pauseIcons[i]);
+            Thread.Sleep(200);
+            Console.Write("\b \b");
+
+            i++;
+            if(i >= pauseIcons.Count)
+            {
+                i = 0;
+            }
 
        }
+       }
+
+      
 
     }
 
@@ -61,7 +78,8 @@ public class Activity
 
     public void DisplayEndMessage()
     {
-        Console.WriteLine($"Congratulations! You have completed the {_activityName} exercise. What was your experience after completing this exercise? ");
+        Console.Clear();
+        Console.WriteLine(_activityEndMessage);
         Console.Write("Your Feedback: ");
         Console.ReadLine();
     }
