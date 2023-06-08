@@ -10,7 +10,6 @@ public class ListingActivity: Activity
     {
         _activityName = "Listing";
         _activityDescription = "Listing activity will help you think of subject matters and list out as many things as you can relate with that subject";
-        _activityDuration = 30;
         _activityInstruction = "You will be presented with a random subject and at the prompt, list as many things as you can relating to the subject";
         _activityEndMessage = "Congratulation! You completed the listing activity";
       

@@ -6,12 +6,10 @@ public class BreathingActivity : Activity
     {
         _activityName = "Breathing Activity";
         _activityDescription = "This activity will help you to release stress by breathing deeply and intently";
-        _activityDuration = 30;
         _activityEndMessage = "Congratulations! You have completed the Breathing activity exercise. What was your experience after completing this exercise? ";
         _activityInstruction = "At the prompt, keep inhaling until the countdown reaches 0 and then, using the same prompt, exhale";
 
     }
-
     public void RunBreathingActivity()
     {
         Console.Clear();
