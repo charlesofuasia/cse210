@@ -35,11 +35,11 @@ public class ReflectionActivity: Activity
     {
        
         _questions = new List<string>(){
-            "Why was this experience meaningful to you?",
-            "Have you ever done anything like this before?",
-            "How did you get started?",
-            "How did you feel when it was complete?",
-            "What made this time different than other times when you were not as successful?"
+            "Why was this experience meaningful to you? ",
+            "Have you ever done anything like this before? ",
+            "How did you get started? ",
+            "How did you feel when it was complete? ",
+            "What made this time different than other times when you were not as successful? "
         };
         Random rnd = new Random();
         int j = rnd.Next(_questions.Count);
@@ -53,14 +53,9 @@ public class ReflectionActivity: Activity
         Console.Clear();
         DisplayStartMessage();
         Console.WriteLine();
-        ActivatePause(10);
-        Console.Write("Choose the length of time in seconds for this activity: ");
-        string duration = Console.ReadLine();
-        Console.WriteLine();
-        _activityDuration = int.Parse(duration);
-
-        
-
+        ActivatePause(5);
+        Console.WriteLine(_activityInstruction);
+        _activityDuration = GetDuration();
         DateTime start = DateTime.Now;
         DateTime end = start.AddSeconds(_activityDuration);
         Console.WriteLine(GetPrompt());
@@ -71,15 +66,18 @@ public class ReflectionActivity: Activity
         if(begin == "")
         {
             _usedQuestions = new List<string>();
+            Console.Write("Begin in... ");
+            ActivateActivityTimer(4);
+            Console.WriteLine(" seconds");
             while(DateTime.Now < end)
             {
                 string question = GetQuestion(); 
-                Console.WriteLine(question);
+                Console.Write(question);
                 _usedQuestions.Add(question);
                 ActivatePause(10);
+                Console.WriteLine();
                 
             }       
         }
-        Console.WriteLine(_usedQuestions.Count);
     }
 }

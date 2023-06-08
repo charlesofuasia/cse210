@@ -27,6 +27,14 @@ public class Activity
         Console.WriteLine($"Welcome to {_activityName} activity: {_activityDescription} ");
        
     }
+
+    protected int GetDuration()
+    {
+        Console.WriteLine("Choose the length of time in seconds for this activity: ");
+        string duration = Console.ReadLine();
+        _activityDuration = int.Parse(duration);
+        return _activityDuration;
+    }
     public void ActivatePause(int period)
     {
        Console.CursorVisible = false;

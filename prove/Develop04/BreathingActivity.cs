@@ -18,22 +18,17 @@ public class BreathingActivity : Activity
         Activity activity = new Activity();
         DisplayStartMessage();
         Console.WriteLine();
-        Console.Write("What duration in seconds would you like to engage in this activity? ");
-        string duration = Console.ReadLine();
-        Console.WriteLine();
-        _activityDuration = int.Parse(duration);
+        _activityDuration = GetDuration();
         Console.WriteLine(_activityInstruction);
         DateTime start = DateTime.Now;
         DateTime stop = start.AddSeconds(_activityDuration);
-        DateTime present = DateTime.Now;
         Console.Write("Ready in 5 seconds......");
         ActivateActivityTimer(5);
         Console.WriteLine();
         Console.WriteLine("Start!");
-        ActivatePause(5);
-       
+        ActivatePause(5); 
         
-        while(present < stop)
+        while(DateTime.Now < stop)
         {   
         
         Console.Clear();
@@ -45,9 +40,8 @@ public class BreathingActivity : Activity
         Console.WriteLine();
         Console.Write("Breathe out.....");
         ActivateActivityTimer(6);
-        present = DateTime.Now;
-
         }
+
         Console.WriteLine();
         Console.WriteLine("Complete");
         Console.WriteLine();
