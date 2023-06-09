@@ -6,22 +6,20 @@ public class Activity
     protected string _activityDescription;
     protected string _activityInstruction;
     protected int _activityDuration;
-    protected string _activityUserFeedback;
 
-   public Activity()
-   {
-
-   }
-    public void DisplayStartMessage()
+    protected void DisplayStartMessage()
     {
         Console.Clear();
         Console.WriteLine($"Welcome to {_activityName} activity: {_activityDescription} ");
+        ActivatePause(4);
+        Console.WriteLine();
+        Console.WriteLine(_activityInstruction);
        
     }
 
     protected int GetDuration()
     {
-        Console.CursorVisible = true;
+        Console.CursorVisible = false;
         Console.WriteLine("Choose the length of time in seconds for this activity: ");
         string duration = Console.ReadLine();
         _activityDuration = int.Parse(duration);
@@ -29,16 +27,9 @@ public class Activity
     }
     protected void ActivatePause(int period)
     {
-       List<string> pauseIcons = new List<string>();
-       pauseIcons.Add("|");
-       pauseIcons.Add("/");
-       pauseIcons.Add("-");
-       pauseIcons.Add("\\");
-       pauseIcons.Add("|");
-       pauseIcons.Add("/");
-       pauseIcons.Add("-");
-       pauseIcons.Add("\\");
-
+       List<string> pauseIcons = new List<string>()
+       {"|", "/", "-", "\\", "|", "/", "-", "\\"};
+    
        DateTime startTime = DateTime.Now;
        DateTime stoptime = startTime.AddSeconds(period);
 
@@ -75,10 +66,10 @@ public class Activity
 
     protected void DisplayEndMessage()
     {
-        Console.Clear();
         Console.WriteLine($"Congratulations! You have completed {_activityDuration} seconds of {_activityName} activity. How did you feel after the exercise?");
         Console.Write("Your Feedback: ");
         Console.ReadLine();
+        ActivatePause(3);
     }
 
     protected void PrepareToStart()

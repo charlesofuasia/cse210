@@ -9,19 +9,16 @@ public class BreathingActivity : Activity
         _activityInstruction = "At the prompt, keep inhaling until the countdown reaches 0 and then, using the same prompt, exhale";
 
     }
+
     public void RunBreathingActivity()
     {
         Console.Clear();
         DisplayStartMessage();
-        Console.WriteLine();
-       
-        Console.WriteLine(_activityInstruction);
-       
         ActivatePause(5); 
+        Console.WriteLine();
         _activityDuration = GetDuration();
         DateTime start = DateTime.Now;
         DateTime stop = start.AddSeconds(_activityDuration);
-        Console.Write("Ready in......");
         PrepareToStart();
         
         while(DateTime.Now < stop)
@@ -39,7 +36,7 @@ public class BreathingActivity : Activity
         }
 
         Console.WriteLine();
-        Console.WriteLine("Complete");
+        Console.WriteLine("Done.");
         Console.WriteLine();
         ActivatePause(5);
         Console.WriteLine();

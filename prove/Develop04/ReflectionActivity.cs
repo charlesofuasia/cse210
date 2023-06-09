@@ -3,15 +3,16 @@ using System;
 public class ReflectionActivity: Activity
 {
     private string _prompt;
-    private string _question;
+
     private List<string> _prompts;
+    
     private List<string> _questions;
-    private List<string> _usedQuestions;
+    private List<int> _usedIndexes;
 
     public ReflectionActivity(){
         _activityName = "Reflection";
         _activityDescription = "The Reflection activity helps you to reflect on various aspects of your life";
-        _activityInstruction = "You are choose the length of time you wish to spend reflecting, then the program will present you a random subject to reflect on, after which random questions will be presented to you to help deepen your thoughts on the selected topic";
+        _activityInstruction = "You are to choose the length of time you wish to spend reflecting, then the program will present you a random subject to reflect on, after which random questions will be presented to you to help deepen your thoughts on the selected topic";
     }
     private string GetPrompt()
     {
@@ -31,42 +32,49 @@ public class ReflectionActivity: Activity
     }
     private string GetQuestion()
     {
-       
-        _questions = new List<string>(){
-            "Why was this experience meaningful to you? ",
-            "Have you ever done anything like this before? ",
-            "How did you get started? ",
-            "How did you feel when it was complete? ",
-            "What made this time different than other times when you were not as successful? "
-        };
+        int j;
         Random rnd = new Random();
-        int j = rnd.Next(_questions.Count);
-        _question = _questions[j];
-        return _question;
+        do
+        {
+            j = rnd.Next(_questions.Count);
+        }
+        while(_usedIndexes.Contains(j));
+        _usedIndexes.Add(j);
+        return _questions[j];
     }
 
 
     public void RunReflectionActivity()
     {
+        _questions = new List<string>(){
+            "Why was this experience meaningful to you? ",
+            "Have you ever done anything like this before? ",
+            "How did you get started? ",
+            "How did you feel when it was complete? ",
+            "What made this time different than other times when you were not as successful? ",
+            "What is your favorite thing about this experience?",
+            "What could you learn from this experience that applies to other situations?",
+            "What did you learn about yourself through this experience?",
+            "How can you keep this experience in mind in the future?"
+        };
+        _usedIndexes = new List<int>();
         Console.Clear();
         DisplayStartMessage();
-        Console.WriteLine();
         ActivatePause(5);
-        Console.WriteLine(_activityInstruction);
-       
+        Console.WriteLine();
         ActivatePause(10);
         _activityDuration = GetDuration();
         ActivatePause(5);
+        Console.WriteLine();
       
         Console.WriteLine(GetPrompt());
-        Console.WriteLine();Thread.Sleep(1000);
         ActivatePause(5);
-        Thread.Sleep(1000);
+        Console.WriteLine();
         Console.Write("Press 'ENTER' when you are ready to start: ");
         string begin = Console.ReadLine();
         if(begin == "")
         {
-            _usedQuestions = new List<string>();
+        
             PrepareToStart();
             DateTime start = DateTime.Now;
             DateTime end = start.AddSeconds(_activityDuration);
@@ -74,10 +82,12 @@ public class ReflectionActivity: Activity
             {
                 string question = GetQuestion(); 
                 Console.Write(question);
-                _usedQuestions.Add(question);
+
                 ActivatePause(10);
                 Console.WriteLine();    
             } 
+            Console.WriteLine("Done.");
+            Thread.Sleep(1500);
             DisplayEndMessage();      
         }
         

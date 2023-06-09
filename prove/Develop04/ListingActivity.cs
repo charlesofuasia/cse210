@@ -34,9 +34,6 @@ public class ListingActivity: Activity
         DisplayStartMessage();
         Console.WriteLine();
         ActivatePause(5);
-        Console.WriteLine(_activityInstruction);
-        Thread.Sleep(1000);
-        ActivatePause(7);
         Console.WriteLine();
         _activityDuration = GetDuration();
         
@@ -52,7 +49,7 @@ public class ListingActivity: Activity
 
         while(DateTime.Now < end)
         {
-            Console.CursorVisible = true;
+            Console.Write(">>");
             string ans = Console.ReadLine();
             _itemsList.Add(ans);
         }
