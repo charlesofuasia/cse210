@@ -11,7 +11,6 @@ public class ListingActivity: Activity
         _activityName = "Listing";
         _activityDescription = "Listing activity will help you think of subject matters and list out as many things as you can relate with that subject";
         _activityInstruction = "You will be presented with a random subject and at the prompt, list as many things as you can relating to the subject";
-        _activityEndMessage = "Congratulation! You completed the listing activity";
       
     }
     private string GetListPrompt()
@@ -34,28 +33,45 @@ public class ListingActivity: Activity
         Console.Clear();
         DisplayStartMessage();
         Console.WriteLine();
-        ActivatePause(4);
+        ActivatePause(5);
         Console.WriteLine(_activityInstruction);
+        Thread.Sleep(1000);
+        ActivatePause(7);
         Console.WriteLine();
         _activityDuration = GetDuration();
-        ActivatePause(10);
-        Console.Write("Ready in...");
-        ActivateActivityTimer(4);
+        
+        ActivatePause(5);
+        PrepareToStart();
+        
+        _itemsList = new List<string>();
+        
         DateTime start = DateTime.Now;
         DateTime end = start.AddSeconds(_activityDuration);
-
+        Console.Clear();
         Console.WriteLine(GetListPrompt());
-        _itemsList = new List<string>();
 
         while(DateTime.Now < end)
         {
+            Console.CursorVisible = true;
             string ans = Console.ReadLine();
             _itemsList.Add(ans);
         }
         Console.WriteLine();
-        Console.WriteLine($"Done! You list {_itemsList.Count} after {_activityDuration} seconds of{_activityName} Activity.");
-        ActivatePause(10);
+        Console.WriteLine("Done");
+        ActivatePause(3);
+        Console.WriteLine($"You listed {_itemsList.Count} {InsertNoun(_itemsList.Count)} after {_activityDuration} seconds of {_activityName} Activity.");
+        ActivatePause(5);
+        DisplayEndMessage();
 
-
+        static string InsertNoun(int count){
+            if(count <= 1)
+            {
+                return "item";
+            }
+            else
+            {
+                return "items";
+            }
+        }
     }
 }

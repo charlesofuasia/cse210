@@ -4,7 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.CursorVisible = false;
+        Console.Clear();
         Console.WriteLine("Wellcome to the Mindfullness App");
+        Thread.Sleep(2000);
         Console.WriteLine();
          string option = "";
 
@@ -30,9 +33,6 @@ class Program
             case "4":
             break;
 
-            default:
-            Console.WriteLine("Please enter only numerical values 1 - 4");
-            break;
         };
          }
          Console.WriteLine();
