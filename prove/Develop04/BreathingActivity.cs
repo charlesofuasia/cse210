@@ -29,10 +29,10 @@ public class BreathingActivity : Activity
         Console.WriteLine();
         
         Console.Write("Breathe in ......");
-        ActivateActivityTimer(9);
+        ActivateActivityTimer(7);
         Console.WriteLine();
         Console.Write("Breathe out.....");
-        ActivateActivityTimer(6);
+        ActivateActivityTimer(7);
         }
 
         Console.WriteLine();
