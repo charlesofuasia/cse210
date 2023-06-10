@@ -54,9 +54,17 @@ class Program
 
         };
          }
-        Console.WriteLine();
-        Console.WriteLine($"You have completed:\n{bCount} round{AddS(bCount)} of breathing activity\n{lCount} round{AddS(lCount)} of listing activity\n{rCount} round{AddS(rCount)} of reflection activity.\n\tWell Done!");
-             
+        Console.Clear();
+        if(bCount == 0 && lCount == 0 && rCount == 0)
+        {
+            Console.WriteLine("You did not partake in any activity at this time.");
+        }
+        else
+        {
+            Console.WriteLine($"You have completed:\n{bCount} round{AddS(bCount)} of breathing activity\n{lCount} round{AddS(lCount)} of listing activity\n{rCount} round{AddS(rCount)} of reflection activity.\n\tWell Done!");
+       
+        }
+              
         static string ChooseOption()
         {
             /*
