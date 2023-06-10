@@ -7,7 +7,7 @@ public class ReflectionActivity: Activity
     private List<string> _prompts;
     
     private List<string> _questions;
-    private List<int> _usedIndexes;
+    private List<int> _usedIndices;
 
     public ReflectionActivity(){
         _activityName = "Reflection";
@@ -15,13 +15,16 @@ public class ReflectionActivity: Activity
         _activityInstruction = "You are to choose the length of time you wish to spend reflecting, then the program will present you a random subject to reflect on, after which random questions will be presented to you to help deepen your thoughts on the selected topic";
     }
     private string GetPrompt()
-    {
-            _prompts = new List<string>(){
-            "Think about a time you truly felt joy in your heart",
-            "Think of a time when you stood up for someone else",
-            "Think of a time when you did something really difficult.",
-            "Think of a time when you helped someone in need",
-            "Think of a time when you did something truly selfless."
+    {/*A function that returns a random statement from a list of statements
+       Parameters: none
+       returns: string _prompt
+       */
+        _prompts = new List<string>(){
+        "Think about a time you truly felt joy in your heart",
+        "Think of a time when you stood up for someone else",
+        "Think of a time when you did something really difficult.",
+        "Think of a time when you helped someone in need",
+        "Think of a time when you did something truly selfless."
 
         };
         Random random = new Random();
@@ -31,21 +34,29 @@ public class ReflectionActivity: Activity
         return _prompt;
     }
     private string GetQuestion()
-    { 
+    { /*A function to randomly pick an index position of a string item in a 
+    list of string and add the picked index to another list, _usedIndices and
+    also ensure that an index number in the used indices list is not picked.
+    Parameters: none
+    Returns: string _question[j]*/
         int j;
         Random rnd = new Random();
         do
         {
             j = rnd.Next(_questions.Count);
         }
-        while(_usedIndexes.Contains(j));
-        _usedIndexes.Add(j);
+        while(_usedIndices.Contains(j));
+        _usedIndices.Add(j);
         return _questions[j];
     }
 
 
     public void RunReflectionActivity()
     {
+        /*A function that runs the reflection activity
+        parameters: none
+        returns: nothing
+        */
          _questions = new List<string>(){
             "Why was this experience meaningful to you? ",
             "Have you ever done anything like this before? ",
@@ -57,7 +68,7 @@ public class ReflectionActivity: Activity
             "What did you learn about yourself through this experience?",
             "How can you keep this experience in mind in the future?"
         };
-        _usedIndexes = new List<int>();
+        _usedIndices = new List<int>();
        
         Console.Clear();
         DisplayStartMessage();
