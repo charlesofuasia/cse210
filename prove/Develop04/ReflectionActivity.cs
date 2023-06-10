@@ -93,7 +93,7 @@ public class ReflectionActivity: Activity
                 string question = GetQuestion(); 
                 Console.Write(question);
 
-                ActivatePause(10);
+                ActivatePause(15);
                 Console.WriteLine();    
             } 
             Console.WriteLine("Done.");
