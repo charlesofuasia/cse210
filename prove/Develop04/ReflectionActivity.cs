@@ -31,7 +31,7 @@ public class ReflectionActivity: Activity
         return _prompt;
     }
     private string GetQuestion()
-    {
+    { 
         int j;
         Random rnd = new Random();
         do
@@ -46,7 +46,7 @@ public class ReflectionActivity: Activity
 
     public void RunReflectionActivity()
     {
-        _questions = new List<string>(){
+         _questions = new List<string>(){
             "Why was this experience meaningful to you? ",
             "Have you ever done anything like this before? ",
             "How did you get started? ",
@@ -58,13 +58,12 @@ public class ReflectionActivity: Activity
             "How can you keep this experience in mind in the future?"
         };
         _usedIndexes = new List<int>();
+       
         Console.Clear();
         DisplayStartMessage();
-        ActivatePause(5);
         Console.WriteLine();
-        ActivatePause(10);
         _activityDuration = GetDuration();
-        ActivatePause(5);
+        //ActivatePause(5);
         Console.WriteLine();
       
         Console.WriteLine(GetPrompt());
@@ -87,7 +86,6 @@ public class ReflectionActivity: Activity
                 Console.WriteLine();    
             } 
             Console.WriteLine("Done.");
-            Thread.Sleep(1500);
             DisplayEndMessage();      
         }
         

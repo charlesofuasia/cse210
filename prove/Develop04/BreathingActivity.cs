@@ -14,12 +14,12 @@ public class BreathingActivity : Activity
     {
         Console.Clear();
         DisplayStartMessage();
-        ActivatePause(5); 
         Console.WriteLine();
         _activityDuration = GetDuration();
+       
+        PrepareToStart();
         DateTime start = DateTime.Now;
         DateTime stop = start.AddSeconds(_activityDuration);
-        PrepareToStart();
         
         while(DateTime.Now < stop)
         {   
@@ -37,9 +37,6 @@ public class BreathingActivity : Activity
 
         Console.WriteLine();
         Console.WriteLine("Done.");
-        Console.WriteLine();
-        ActivatePause(5);
-        Console.WriteLine();
         DisplayEndMessage();
        
     }

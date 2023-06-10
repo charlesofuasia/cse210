@@ -14,19 +14,21 @@ public class Activity
         ActivatePause(4);
         Console.WriteLine();
         Console.WriteLine(_activityInstruction);
+        ActivatePause(5);
        
     }
 
     protected int GetDuration()
     {
-        Console.CursorVisible = false;
         Console.WriteLine("Choose the length of time in seconds for this activity: ");
         string duration = Console.ReadLine();
         _activityDuration = int.Parse(duration);
+        ActivatePause(5);
         return _activityDuration;
     }
     protected void ActivatePause(int period)
     {
+       Console.CursorVisible = false; 
        List<string> pauseIcons = new List<string>()
        {"|", "/", "-", "\\", "|", "/", "-", "\\"};
     
@@ -66,6 +68,7 @@ public class Activity
 
     protected void DisplayEndMessage()
     {
+        ActivatePause(3);
         Console.WriteLine($"Congratulations! You have completed {_activityDuration} seconds of {_activityName} activity. How did you feel after the exercise?");
         Console.Write("Your Feedback: ");
         Console.ReadLine();
@@ -75,12 +78,12 @@ public class Activity
     protected void PrepareToStart()
     {
         Console.Clear();
-        Thread.Sleep(1000);
+        Thread.Sleep(500);
         Console.Write("Begin in... ");
         ActivateActivityTimer(3);
         Console.Clear();
         Console.WriteLine("Start!");
-        Thread.Sleep(1000);
+        Thread.Sleep(500);
         Console.Clear();
     }
 

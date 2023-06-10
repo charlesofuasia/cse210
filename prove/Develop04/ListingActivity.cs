@@ -33,19 +33,17 @@ public class ListingActivity: Activity
         Console.Clear();
         DisplayStartMessage();
         Console.WriteLine();
-        ActivatePause(5);
-        Console.WriteLine();
         _activityDuration = GetDuration();
-        
-        ActivatePause(5);
         PrepareToStart();
-        
+
         _itemsList = new List<string>();
         
-        DateTime start = DateTime.Now;
-        DateTime end = start.AddSeconds(_activityDuration);
+       
         Console.Clear();
         Console.WriteLine(GetListPrompt());
+
+        DateTime start = DateTime.Now;
+        DateTime end = start.AddSeconds(_activityDuration);
 
         while(DateTime.Now < end)
         {
@@ -55,9 +53,8 @@ public class ListingActivity: Activity
         }
         Console.WriteLine();
         Console.WriteLine("Done");
-        ActivatePause(3);
+        Thread.Sleep(1500);
         Console.WriteLine($"You listed {_itemsList.Count} {InsertNoun(_itemsList.Count)} after {_activityDuration} seconds of {_activityName} Activity.");
-        ActivatePause(5);
         DisplayEndMessage();
 
         static string InsertNoun(int count){

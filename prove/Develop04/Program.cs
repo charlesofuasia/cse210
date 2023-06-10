@@ -55,7 +55,7 @@ class Program
         };
          }
         Console.WriteLine();
-        Console.WriteLine($"You have completed:\n{bCount} round{AddS(bCount)} of breathing activity\n{lCount} round{AddS(lCount)} of listing activity\n{rCount} round{AddS(rCount)} of reflection activity. Keep it up.");
+        Console.WriteLine($"You have completed:\n{bCount} round{AddS(bCount)} of breathing activity\n{lCount} round{AddS(lCount)} of listing activity\n{rCount} round{AddS(rCount)} of reflection activity.\n\tWell Done!");
              
         static string ChooseOption()
         {
