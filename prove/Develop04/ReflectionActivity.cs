@@ -3,9 +3,7 @@ using System;
 public class ReflectionActivity: Activity
 {
     private string _prompt;
-
     private List<string> _prompts;
-    
     private List<string> _questions;
     private List<int> _usedIndices;
 
