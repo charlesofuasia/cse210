@@ -11,6 +11,9 @@ class Program
         Rectangle rec = new Rectangle(4, 5, "green", "rectangle");
         shapes.Add(rec);
         shapes.Add(new Circle(3, "red", "circle"));
+        shapes.Add(new Circle(1, "yellow", "circle"));
+        shapes.Add(new Square(4, "white", "square"));
+        shapes.Add(new Rectangle(12, 7, "violet", "rectangle"));
         Console.Clear();
 
         foreach(Shapes shape in shapes)
