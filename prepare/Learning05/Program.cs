@@ -16,11 +16,12 @@ class Program
         foreach(Shapes shape in shapes)
         {
             string color = shape.GetColor();
-            Thread.Sleep(2000);
+            Thread.Sleep(500);
             double area = shape.CalculateArea();
             string geometry = shape.GetName();
             Console.WriteLine($"The {color} color has the shape of a {geometry} and has an area of {area}");
         }
+        Console.WriteLine();
 
 
     }
