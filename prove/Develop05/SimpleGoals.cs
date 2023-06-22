@@ -1,17 +1,10 @@
 using System;
-
+using System.IO;
 public class SimpleGoal : Goal
 {
-    public SimpleGoal()
+    public SimpleGoal(string name, string description, int points, bool complete) :base(name, description, points, complete)
     {
 
-    }
-
-    public override void CreateNewGoal()
-    {
-        base.GetGoalName();
-        base.GetDescription();
-        base.GivePoints();
     }
 
     public override int RecordEvent()
@@ -19,16 +12,7 @@ public class SimpleGoal : Goal
         _goalCompletion = true;
         return _goalPoints;
     }
-
-    public override string DisplayGoal()
+    public override void SaveGoal()
     {
-        if(_goalCompletion)
-        {
-            return $"[  ] : {_goalName}~{_goalDescription}~{_goalPoints}~{_goalCompletion}";
-        }
-        else
-        {
-            return $"[ \u2714 ] : {_goalName}~{_goalDescription}~{_goalPoints}~{_goalCompletion}";
-        }
     }
 }

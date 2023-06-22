@@ -4,33 +4,30 @@ public abstract class Goal
 {
     protected string _goalName;
     protected int _goalPoints;
-    protected bool _goalCompletion = false;
+    protected bool _goalCompletion;
     protected string _goalDescription;
-    //protected string _goalCategory;
 
-    public Goal()
+
+    public Goal(string name, string description, int points, bool complete)
     {
-       
+        _goalName = name;
+        _goalDescription = description;
+        _goalPoints = points;
+        _goalCompletion = complete;
     }
 
     public string GetGoalName()
     {
-        Console.Write("What is the name of the goal?: ");
-        _goalName = Console.ReadLine();
         return _goalName;
     }
 
     public string GetDescription()
     {
-        Console.Write("Please describe the goal: ");
-        _goalDescription = Console.ReadLine();
         return _goalDescription;
     }
 
-    public int GivePoints()
+    public int GetPoints()
     {
-        Console.Write("What is the point for this goal?: ");
-        _goalPoints = int.Parse(Console.ReadLine());
         return _goalPoints;
     }
 
@@ -39,10 +36,9 @@ public abstract class Goal
         return _goalCompletion;
     }
 
-    public abstract void CreateNewGoal();
-    public abstract void DisplayGoal();
+    //public abstract void CreateNewGoal();
+    //public abstract string DisplayGoal();
     public abstract int RecordEvent();
-
-   
+    public abstract void SaveGoal(); 
    
 }
