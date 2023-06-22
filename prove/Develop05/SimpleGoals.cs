@@ -12,7 +12,9 @@ public class SimpleGoal : Goal
         _goalCompletion = true;
         return _goalPoints;
     }
-    public override void SaveGoal()
+
+    public override string FormatDisplay()
     {
+        return $"{_goalName} - {_goalDescription} - {_goalPoints}";
     }
 }

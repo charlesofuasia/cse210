@@ -12,4 +12,12 @@ public class EternalGoals : Goal
         _goalCompletion = false;
         return _goalPoints;
     }
+
+    public override string FormatDisplay()
+    {
+        return $"{_goalName} - {_goalDescription} - {_goalPoints}";
+    }
+
+
+
 }

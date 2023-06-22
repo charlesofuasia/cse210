@@ -39,6 +39,6 @@ public abstract class Goal
     //public abstract void CreateNewGoal();
     //public abstract string DisplayGoal();
     public abstract int RecordEvent();
-    public abstract void SaveGoal(); 
+    public abstract string FormatDisplay();
    
 }
