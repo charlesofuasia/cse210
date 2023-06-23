@@ -6,6 +6,7 @@ public abstract class Goal
     protected int _goalPoints;
     protected bool _goalCompletion;
     protected string _goalDescription;
+    protected string _goalType;
 
 
     public Goal(string name, string description, int points, bool complete)
@@ -40,5 +41,6 @@ public abstract class Goal
     //public abstract string DisplayGoal();
     public abstract int RecordEvent();
     public abstract string FormatDisplay();
+    public abstract string FormatSave();
    
 }
