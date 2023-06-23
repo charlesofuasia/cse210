@@ -22,15 +22,6 @@ public abstract class Goal
         return _goalName;
     }
 
-    public string GetDescription()
-    {
-        return _goalDescription;
-    }
-
-    public int GetPoints()
-    {
-        return _goalPoints;
-    }
 
     public bool GoalIsComplete()
     {

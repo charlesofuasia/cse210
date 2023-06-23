@@ -1,0 +1,4 @@
+10
+Simple Goal|Career Goal|Secure an IT job that pays over $10 per hour before Christmas.|2500|False
+Eternal Goal|Spiritual Goal|Study the scriptures and pray everyday.|10|False
+Checklist Goal|Fitness Goal.|Exercise for 15 minutes regularly this week.|25|False|5|0|500
