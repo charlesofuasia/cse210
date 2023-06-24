@@ -1,4 +1,0 @@
-30
-Simple Goal|Job Search|To find a job I love that will make me happy.|5|True
-Eternal Goal|Gain Christlike attributes|By studying scriptures and keeping the commandments.|10|False
-Checklist Goal|fitness 2.0|exercing morning and evenings|2|True|2|2|1

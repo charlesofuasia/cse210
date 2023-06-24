@@ -31,19 +31,17 @@ public abstract class Goal
     protected void PlayAnimation()
     {
         DateTime start = DateTime.Now;
-        DateTime end = start.AddSeconds(3);
+        DateTime end = start.AddSeconds(2);
         while (DateTime.Now < end)
         {
             Console.Clear();
             Console.WriteLine("* * * * *");
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Clear(); 
-            Thread.Sleep(500);
+            Thread.Sleep(250);
         }   
     }
 
-    //public abstract void CreateNewGoal();
-    //public abstract string DisplayGoal();
     public abstract int RecordEvent();
     public abstract string FormatDisplay();
     public abstract string FormatSave();

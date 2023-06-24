@@ -28,7 +28,7 @@ public class ChecklistGoals : Goal
         {
             _goalCompletion = true;
             PlayAnimation();
-            Console.WriteLine($"Congratulations! You have completed {_goalName} goal and earned extra{_bonusPoints} points");
+            Console.WriteLine($"Congratulations! You have completed {_goalName} goal and earned extra{_bonusPoints} points.");
             return _bonusPoints + _goalPoints;
         }
     }
@@ -36,7 +36,7 @@ public class ChecklistGoals : Goal
 
     public override string FormatDisplay()
     {
-        return $"{_goalName} - {_goalDescription} - {_goalPoints} Done {_currentReps} Out of {_targetReps}";
+        return $"{_goalName} - ({_goalDescription}) - Points Value = {_goalPoints} --- Current status = {_currentReps} / {_targetReps}.";
     }
 
     public override string FormatSave()

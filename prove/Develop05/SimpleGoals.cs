@@ -17,7 +17,7 @@ public class SimpleGoal : Goal
 
     public override string FormatDisplay()
     {
-        return $"{_goalName} ( {_goalDescription} ) - {_goalPoints}";
+        return $"{_goalName} ( {_goalDescription} ) - Points value = {_goalPoints}";
     }
 
     public override string FormatSave()
