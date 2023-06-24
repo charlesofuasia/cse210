@@ -27,6 +27,7 @@ public class ChecklistGoals : Goal
         else
         {
             _goalCompletion = true;
+            PlayAnimation();
             Console.WriteLine($"Congratulations! You have completed {_goalName} goal and earned extra{_bonusPoints} points");
             return _bonusPoints + _goalPoints;
         }

@@ -10,6 +10,7 @@ public class SimpleGoal : Goal
     public override int RecordEvent()
     { 
         _goalCompletion = true;
+        PlayAnimation();
         Console.WriteLine($"Congratulation for completing your goal! You just earned {_goalPoints} points");
         return _goalPoints;
     }
