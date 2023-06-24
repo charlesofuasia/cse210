@@ -1,3 +1,0 @@
-0
-Simple Goal|test 1|simple test|5|False
-Eternal Goal|test 2|eternal goals|10|False
