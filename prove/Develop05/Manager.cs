@@ -82,7 +82,7 @@ public class Manager
                 }
                 else
                 {
-                    Console.Write("[  ] : ");
+                    Console.Write("[   ] : ");
                 }
                 Console.WriteLine(goal.FormatDisplay());
             }
@@ -114,41 +114,48 @@ public class Manager
 
     public void LoadGoals()
     {
-        _goals.Clear();
-        Console.Write("What is the filename? ");
-        string filename = Console.ReadLine();
-        Console.WriteLine();
-
-        string[] lines = System.IO.File.ReadAllLines(filename);
-        for (int i = 0; i < lines.Count<string>(); i++)
+        try
         {
-            if (i == 0)
+            _goals.Clear();
+            Console.Write("What is the filename? ");
+            string filename = Console.ReadLine();
+            Console.WriteLine();
+
+            string[] lines = System.IO.File.ReadAllLines(filename);
+            for (int i = 0; i < lines.Count<string>(); i++)
             {
-                _totalPoints = int.Parse(lines[i]);
-            }
-            else
-            {
-                string[] goal = lines[i].Split("|");
-                switch (goal[0])
+                if (i == 0)
                 {
-                    case "Simple Goal":
-                        SimpleGoal simple = new SimpleGoal(goal[1], goal[2], int.Parse(goal[3]), bool.Parse(goal[4]));
-                        _goals.Add(simple);
-                        break;
+                    _totalPoints = int.Parse(lines[i]);
+                }
+                else
+                {
+                    string[] goal = lines[i].Split("|");
+                    switch (goal[0])
+                    {
+                        case "Simple Goal":
+                            SimpleGoal simple = new SimpleGoal(goal[1], goal[2], int.Parse(goal[3]), bool.Parse(goal[4]));
+                            _goals.Add(simple);
+                            break;
 
-                    case "Eternal Goal":
-                        EternalGoals eternal = new EternalGoals(goal[1], goal[2], int.Parse(goal[3]), bool.Parse(goal[4]));
-                        _goals.Add(eternal);
-                        break;
+                        case "Eternal Goal":
+                            EternalGoals eternal = new EternalGoals(goal[1], goal[2], int.Parse(goal[3]), bool.Parse(goal[4]));
+                            _goals.Add(eternal);
+                            break;
 
-                    case "Checklist Goal":
-                        ChecklistGoals checklist = new ChecklistGoals(int.Parse(goal[5]), int.Parse(goal[6]), int.Parse(goal[7]), goal[1], goal[2], int.Parse(goal[3]), bool.Parse(goal[4]));
-                        _goals.Add(checklist);
-                        break;
+                        case "Checklist Goal":
+                            ChecklistGoals checklist = new ChecklistGoals(int.Parse(goal[5]), int.Parse(goal[6]), int.Parse(goal[7]), goal[1], goal[2], int.Parse(goal[3]), bool.Parse(goal[4]));
+                            _goals.Add(checklist);
+                            break;
+                    }
                 }
             }
+            ListGoals();
         }
-        ListGoals();
+        catch
+        {
+            Console.WriteLine("File cannot be found.");
+        }
     }
 
 

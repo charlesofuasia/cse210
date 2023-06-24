@@ -10,7 +10,7 @@ public class EternalGoals : Goal
     public override int RecordEvent()
     {
         _goalCompletion = false;
-        Console.WriteLine($"You have just earned {_goalPoints} for this event.");
+        Console.WriteLine($"You have just earned {_goalPoints} points for this event.");
         return _goalPoints;
     }
 

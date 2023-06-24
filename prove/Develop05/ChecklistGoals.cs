@@ -36,7 +36,7 @@ public class ChecklistGoals : Goal
 
     public override string FormatDisplay()
     {
-        return $"{_goalName} - ({_goalDescription}) - Points Value = {_goalPoints} --- Current status = {_currentReps} / {_targetReps}.";
+        return $"{_goalName} ({_goalDescription}) - Points Value = {_goalPoints} --- Current status = {_currentReps} / {_targetReps}.";
     }
 
     public override string FormatSave()

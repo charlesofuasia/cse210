@@ -37,13 +37,13 @@ public abstract class Goal
             Console.Clear();
             Console.WriteLine("* * * * *");
             Thread.Sleep(250);
-            Console.Clear(); 
+            Console.Clear();
             Thread.Sleep(250);
-        }   
+        }
     }
 
     public abstract int RecordEvent();
     public abstract string FormatDisplay();
     public abstract string FormatSave();
-   
+
 }
