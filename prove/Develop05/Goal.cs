@@ -28,6 +28,20 @@ public abstract class Goal
         return _goalCompletion;
     }
 
+    protected void PlayAnimation()
+    {
+        DateTime start = DateTime.Now;
+        DateTime end = start.AddSeconds(3);
+        while (DateTime.Now < end)
+        {
+            Console.Clear();
+            Console.WriteLine("* * * * *");
+            Thread.Sleep(500);
+            Console.Clear(); 
+            Thread.Sleep(500);
+        }   
+    }
+
     //public abstract void CreateNewGoal();
     //public abstract string DisplayGoal();
     public abstract int RecordEvent();
