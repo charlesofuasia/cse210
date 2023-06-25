@@ -117,7 +117,7 @@ public class Manager
         try
         {
             _goals.Clear();
-            Console.Write("What is the filename? ");
+            Console.Write("What is the filename you wish to load from? ");
             string filename = Console.ReadLine();
             Console.WriteLine();
 
@@ -161,7 +161,9 @@ public class Manager
 
     public void RecordEvent()
     {
+        Console.Clear();
         List<Goal> pendingGoals = new List<Goal>();
+        Console.WriteLine("Goals to record:\n");
         int counter = 1;
         for (int i = 0; i < _goals.Count; i++)
         {
@@ -178,12 +180,19 @@ public class Manager
         }
         else
         {
-            Console.Write($"\nWhich goal nos would you like to record?1 - {counter - 1}: ");
-            int option = int.Parse(Console.ReadLine());
-            _totalPoints += pendingGoals[option - 1].RecordEvent();
+            try
+            {
+
+                Console.Write($"\nWhich goal nos would you like to record? Choose any of 1 - {counter - 1}: ");
+                int option = int.Parse(Console.ReadLine());
+                _totalPoints += pendingGoals[option - 1].RecordEvent();
+            }
+            catch
+            {
+                Console.WriteLine($"\nYou have made an invalid entry. To Record event choose only from 1 -{counter - 1}. ");
+            }
         }
 
     }
-
 
 }
