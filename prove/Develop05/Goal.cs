@@ -31,7 +31,7 @@ public abstract class Goal
     protected void PlayAnimation()
     {
         DateTime start = DateTime.Now;
-        DateTime end = start.AddSeconds(2);
+        DateTime end = start.AddSeconds(4);
         while (DateTime.Now < end)
         {
             Console.CursorVisible = false;
@@ -40,9 +40,9 @@ public abstract class Goal
         Console.WriteLine("\n       *          *              *            *             *                *");
             Console.WriteLine("\n*               *               *            *           *           *");
         Console.WriteLine("\n*          *              *                  *                  *");
-            Thread.Sleep(250);
+            Thread.Sleep(500);
             Console.Clear();
-            Thread.Sleep(250);
+            Thread.Sleep(500);
         }
     }
 
