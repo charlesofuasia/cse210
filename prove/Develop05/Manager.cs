@@ -9,7 +9,7 @@ public class Manager
 
     public void CreateGoal()
     {
-        Console.WriteLine("\nChoose a goal type.");
+        Console.WriteLine("\nThe Goal types are:");
         Console.WriteLine("1. Simple Goal\n2. Eternal Goal\n3. Checklist Goal");
         Console.Write("Choose any of 1 - 3: ");
         string type = Console.ReadLine();
