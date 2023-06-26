@@ -34,12 +34,12 @@ public abstract class Goal
         DateTime end = start.AddSeconds(4);
         while (DateTime.Now < end)
         {
-            Console.CursorVisible = false;
+
             Console.Clear();
             Console.WriteLine("*               *              *              *              *        *");
-        Console.WriteLine("\n       *          *              *            *             *                *");
+            Console.WriteLine("\n       *          *              *            *             *                *");
             Console.WriteLine("\n*               *               *            *           *           *");
-        Console.WriteLine("\n*          *              *                  *                  *");
+            Console.WriteLine("\n*          *              *                  *                  *");
             Thread.Sleep(500);
             Console.Clear();
             Thread.Sleep(500);
