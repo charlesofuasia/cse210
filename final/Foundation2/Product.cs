@@ -27,6 +27,11 @@ namespace OnlineOrder
             return _productName;
         }
 
+        public int GetQuantity()
+        {
+            return _quantity;
+        }
+
         public float ComputeProductPrice()
         {
             return _unitPrice * _quantity;

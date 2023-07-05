@@ -51,7 +51,7 @@ namespace OnlineOrder
 
         public string FormatAddress()
         {
-            return $"\n{GetStreet()}\n{GetCity()}\n{GetState()}\n{GetCountry()}";
+            return $"{GetStreet()}\n{GetCity()}\n{GetState()}\n{GetCountry()}";
         }
 
     }

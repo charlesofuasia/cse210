@@ -7,15 +7,21 @@ namespace OnlineOrder
         private string _customerName;
         private Address _customerAddress;
 
+        public Customer(string customerName, Address address)
+        {
+            _customerName = customerName;
+            _customerAddress = address;
+        }
+
         public string GetCustomerName()
         {
             return _customerName;
         }
 
-        public Address GetAddress(string street, string city, string state, string country)
+        public string GetAddress()
         {
-            Address address = new Address(street, city, state, country);
-            return address;
+            _customerAddress = new Address(_customerAddress.GetStreet(), _customerAddress.GetCity(), _customerAddress.GetState(), _customerAddress.GetCountry());
+            return _customerAddress.FormatAddress();
         }
 
         public bool IsAmericanCustomer()
