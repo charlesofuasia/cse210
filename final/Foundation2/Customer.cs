@@ -26,7 +26,7 @@ namespace OnlineOrder
 
         public bool IsAmericanCustomer()
         {
-           return _customerAddress.InUSA();
+            return _customerAddress.InUSA();
         }
     }
 }

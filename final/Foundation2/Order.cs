@@ -17,7 +17,7 @@ namespace OnlineOrder
             {
                 _shippingCost = 5.00f;
             }
-            else 
+            else
             {
                 _shippingCost = 35.00f;
             }
@@ -53,7 +53,7 @@ namespace OnlineOrder
             {
                 Console.WriteLine($"{item.GetID()} : {item.GetProductName()}    -   {item.GetQuantity()} unit{AddS(item.GetQuantity())}");
             }
-           
+
         }
 
         private string AddS(int _quantity)
