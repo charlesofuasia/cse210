@@ -6,7 +6,7 @@ namespace ExerciseTracker
     {
         private int _laps;
 
-        public Swimming(int laps, string date, int time) :base(date, time)
+        public Swimming(int laps, string date, int time) : base(date, time)
         {
             _laps = laps;
             _activityName = "Swimming";
@@ -14,17 +14,17 @@ namespace ExerciseTracker
 
         public override double GetDistance()
         {
-           return (_laps * 0.05);
+            return _laps * 0.05;
         }
 
         public override double GetSpeed()
         {
-           return ((GetDistance() / _activityDuration) * 60);
+            return ((GetDistance() / _activityDuration) * 60);
         }
 
         public override double GetPace()
         {
-           return (_activityDuration/ GetDistance());
+            return (_activityDuration / GetDistance());
         }
     }
 }

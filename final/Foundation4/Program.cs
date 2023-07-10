@@ -16,13 +16,14 @@ namespace ExerciseTracker
             Cycling cycling = new Cycling(20.15f, "10th July, 2023", 55);
             activities.Add(cycling);
 
-            Swimming swimming = new Swimming(8, "10th July, 2023", 30);
+            Swimming swimming = new Swimming(25, "10th July, 2023", 125);
             activities.Add(swimming);
 
 
             foreach (Activity activity in activities)
             {
                 Console.WriteLine(activity.GetSummary());
+                Console.WriteLine();
             }
         }
     }

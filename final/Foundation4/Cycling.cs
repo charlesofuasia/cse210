@@ -6,7 +6,7 @@ namespace ExerciseTracker
     {
         private float _speed;
 
-        public Cycling(float speed, string date, int time) :base(date, time)
+        public Cycling(float speed, string date, int time) : base(date, time)
         {
             _speed = speed;
             _activityName = "Cycling";
@@ -19,7 +19,7 @@ namespace ExerciseTracker
 
         public override double GetDistance()
         {
-           return ((_speed * _activityDuration) / 60);
+            return ((_speed * _activityDuration) / 60);
         }
 
         public override double GetPace()

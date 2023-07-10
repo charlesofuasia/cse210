@@ -34,7 +34,7 @@ namespace ExerciseTracker
         public abstract double GetPace();
         public string GetSummary()
         {
-            return $"{GetDate()}: {GetActivity()} ({GetDuration()} mins)- {Math.Round(GetDistance(), 2)} km, {Math.Round(GetSpeed(), 2)} kph, {Math.Round(GetPace(), 2)} min/km";
+            return $"{GetDate()}: {GetActivity()} ({GetDuration()} mins) - {Math.Round(GetDistance(), 2)} km, {Math.Round(GetSpeed(), 2)} kph, {Math.Round(GetPace(), 2)} min/km";
         }
 
     }

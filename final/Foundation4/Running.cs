@@ -24,7 +24,7 @@ namespace ExerciseTracker
 
         public override double GetPace()
         {
-           return (_activityDuration / _distance);
+            return (_activityDuration / _distance);
         }
     }
 }
