@@ -9,23 +9,27 @@ namespace EventPlanning
         protected string _description;
         protected string _date;
         protected string _time;
+        protected Address _address;
 
-        public Event( string title, string desciption, string date, string time)
+        public Event(string title, string desciption, string date, string time, Address address)
         {
             _title = title;
             _description = desciption;
             _date = date;
             _time = time;
+            _address = address;
         }
 
-        protected string EventSummary()
+        public void EventSummary()
         {
-            return $"\t {_type}\n{_title}\n{_date}\n{_time}";
+            Console.Clear();
+            Console.WriteLine($"\t {_type}\n{_title}\n{_date}\n{_time}");
         }
 
-        protected string EventDetails()
+        public void EventDetails()
         {
-            return $"\t {_title}\n{_description}\n{_date}\n{_time}";
+            Console.Clear();
+            Console.WriteLine($"\t {_title}\n{_description}\n{_date}\n{_time}\n\t  *****\n{_address.GetAddress()}");
         }
 
     }

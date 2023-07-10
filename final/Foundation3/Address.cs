@@ -36,7 +36,7 @@ namespace EventPlanning
 
         public string GetAddress()
         {
-            return $"\n{_venue} - {_city}\n\t{_state} - {_country}";
+            return $"\n{GetVenue()} - {GetCity()}\n\t{GetState()} - {GetCountry()}";
         }
     }
 }

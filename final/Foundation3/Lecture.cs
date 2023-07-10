@@ -7,16 +7,17 @@ namespace EventPlanning
         private string _speaker;
         private int _capacity;
 
-        public Lecture(string speaker, int capacity, string title, string desciption, string date, string time) :base(title, desciption, date, time)
+        public Lecture(string speaker, int capacity, string title, string desciption, string date, string time, Address address) : base(title, desciption, date, time, address)
         {
             _speaker = speaker;
             _capacity = capacity;
             _type = "Lecture";
         }
 
-        public string GetLectureDetails()
+        public void GetLectureDetails()
         {
-            return $"\t --{_type}--\nTitle: {_title}\nSpeaker: {_speaker}\n{_description}\nDate: {_date}\nTime: {_time}";
+            Console.Clear();
+            Console.WriteLine($"\t --{_type}--\nTitle: {_title}\nSpeaker: {_speaker}\n{_description}\nDate: {_date}\nTime: {_time}\n  ***** \n{_address.GetAddress()}");
         }
     }
 }
