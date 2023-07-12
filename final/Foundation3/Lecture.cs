@@ -14,10 +14,10 @@ namespace EventPlanning
             _type = "Lecture";
         }
 
-        public void GetLectureDetails()
+        public override void GetFullDetails()
         {
             Console.Clear();
-            Console.WriteLine($"\t --{_type}--\nTitle: {_title}\nSpeaker: {_speaker}\n{_description}\nDate: {_date}\nTime: {_time}\n  ***** \n{_address.GetAddress()}");
+            Console.WriteLine($" --{_type}--\nTitle: {_title}\nSpeaker: {_speaker}\n{_description}\nDate: {_date}\nTime: {_time}\n{_address.GetAddress()}");
         }
     }
 }

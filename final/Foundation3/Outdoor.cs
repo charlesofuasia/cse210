@@ -12,10 +12,10 @@ namespace EventPlanning
             _type = "Outdoor Event";
         }
 
-        public void GetOutdoorDetails()
+        public override void GetFullDetails()
         {
             Console.Clear();
-            Console.WriteLine($"\t --{_type}--\nTitle: {_title}\n{_description}\nDate: {_date}\nTime: {_time}\nWeather Forecast: {_forecast}\n\t *****  \n{_address.GetAddress()}");
+            Console.WriteLine($" --{_type}--\nTitle: {_title}\n{_description}\nDate: {_date}\nTime: {_time}\nWeather Forecast: {_forecast}\n{_address.GetAddress()}");
         }
 
     }

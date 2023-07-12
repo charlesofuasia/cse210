@@ -12,10 +12,10 @@ namespace EventPlanning
             _type = "Reception";
         }
 
-        public void GetReceptionDetails()
+        public override void GetFullDetails()
         {
             Console.Clear();
-            Console.WriteLine($"\t --{_type}--\nTitle: {_title}\n{_description}\nDate: {_date}\nTime: {_time}\nRSVP: {_rsvp}\n  ***** \n{_address.GetAddress()}");
+            Console.WriteLine($"--{_type}--\nTitle: {_title}\n{_description}\nDate: {_date}\nTime: {_time}\nRSVP: {_rsvp}\n{_address.GetAddress()}");
         }
     }
 }
