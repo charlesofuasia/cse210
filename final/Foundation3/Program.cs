@@ -26,7 +26,7 @@ namespace EventPlanning
                 item.EventSummary();
                 Console.WriteLine(item.GetEventDetails());
                 item.GetFullDetails();
-                Console.WriteLine("\n___________________________________________________");
+                Console.WriteLine("\n___________________________________");
             }
         }
     }
