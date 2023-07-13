@@ -15,7 +15,7 @@ namespace EventPlanning
         public override void GetFullDetails()
         {
             Console.Clear();
-            Console.WriteLine($" --{_type}--\nTitle: {_title}\n{_description}\nDate: {_date}\nTime: {_time}\nWeather Forecast: {_forecast}\n{_address.GetAddress()}");
+            Console.WriteLine($"{GetEventDetails()}\nWeather Forecast: {_forecast}");
         }
 
     }

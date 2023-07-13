@@ -23,13 +23,12 @@ namespace EventPlanning
         public void EventSummary()
         {
             Console.Clear();
-            Console.WriteLine($"{_type}\n{_title}\n{_date}\n{_time}");
+            Console.WriteLine($"\nS---{_type}---{_title}\n{_date}");
         }
 
-        public void EventDetails()
+        public string GetEventDetails()
         {
-            Console.Clear();
-            Console.WriteLine($"{_title}\n{_description}\n{_date}\n{_time}\n{_address.GetAddress()}");
+           return $"\n---{_title}---\n{_description}\n{_date}\n{_time}\n{_address.GetAddress()}";
         }
 
         public virtual void GetFullDetails()

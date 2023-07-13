@@ -17,7 +17,7 @@ namespace EventPlanning
         public override void GetFullDetails()
         {
             Console.Clear();
-            Console.WriteLine($" --{_type}--\nTitle: {_title}\nSpeaker: {_speaker}\n{_description}\nDate: {_date}\nTime: {_time}\n{_address.GetAddress()}");
+            Console.WriteLine($"{GetEventDetails()}\nSpeaker: {_speaker}\nCapacity: {_capacity}");
         }
     }
 }
