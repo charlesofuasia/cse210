@@ -10,6 +10,7 @@ class Program
         string Surname = Console.ReadLine();
         //Use char function and Toupper method to capitalize output in cases where user input are in lower cases
         Console.WriteLine($"Your name is {char.ToUpper(Surname[0]) + Surname.Substring(1)},  {char.ToUpper(FirstName[0]) + FirstName.Substring(1)} {char.ToUpper(Surname[0]) + Surname.Substring(1)}.");
+        Console.WriteLine($"{Surname.ToUpper()}");
        
     }
 }
